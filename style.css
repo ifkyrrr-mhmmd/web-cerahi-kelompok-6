@@ -1,0 +1,386 @@
+:root {
+  --utama: #fdd835; /* Warna utama - emas */
+  --bg: #0d1b2a; /* Warna latar belakang - biru tua */
+  --accent: #ffcc00; /* Warna aksen - kuning cerah */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg); /* Latar belakang gelap */
+  color: #eaeaea; /* Teks terang untuk kontras */
+  line-height: 1.6; /* Jarak antar baris */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 7%;
+  background-color: #0d1b2a; /* Warna gelap */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100vw;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px); /* Bisa dihapus jika tidak diperlukan */
+}
+
+.navbar .navbar-logo {
+  display: inline-block;
+}
+
+.navbar .navbar-logo img {
+  max-height: 50px;
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0 0.8rem;
+  transition: color 0.3s;
+}
+
+.navbar .navbar-nav a:hover {
+  color: #fdd835;
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid var(--utama);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.6);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  box-sizing: border-box;
+  min-height: 100vh;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("img/3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #eaeaea;
+  text-align: center;
+  padding: 5rem 1rem;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(13, 27, 42, 1) 10%,
+    rgba(13, 27, 42, 0) 80%
+  );
+}
+
+.hero .content h1 {
+  font-size: 4rem;
+  color: #ffffff;
+  line-height: 1.2;
+}
+
+.hero .content h1 span {
+  color: var(--utama);
+}
+
+.hero .content h1 span .putih {
+  color: #fff;
+}
+
+.hero .content p {
+  font-size: 1.4rem;
+  margin: 2rem;
+}
+
+.hero .content .cta {
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: var(--bg);
+  border-radius: 0.5rem;
+}
+
+.hero .content .cta:hover {
+  background-color: #333;
+  color: #fdd835;
+}
+
+/* Tentang Kami section */
+.about,
+.menu,
+.contact {
+  background-color: var(--bg);
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2,
+.menu h2,
+.contact h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+}
+
+.about h2 span,
+.menu h2 span,
+.contact h2 span {
+  color: var(--utama);
+}
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 10rem;
+}
+
+.about .row .about-img img {
+  border: 3px solid var(--utama);
+  border-radius: 5%;
+  max-height: 300px;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+}
+
+.about .row .content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.about .row .content span {
+  color: var(--utama);
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.4rem;
+  /* font-weight: 200; */
+  line-height: 1.6;
+  font-family: "Raleway", sans-serif;
+  color: #fff;
+  text-align: justify;
+}
+
+/* Menu Section */
+.menu h2,
+.contact h2 {
+  margin-bottom: 0.5rem;
+}
+
+.menu p {
+  text-align: center;
+  font-size: 1.2rem;
+  max-width: 30rem;
+  margin: auto;
+  /* font-weight: 200; */
+  line-height: 1.6;
+}
+
+.menu .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.menu .row .menu-card {
+  text-align: center;
+  padding-bottom: 4rem;
+  align-items: center;
+  max-width: 50%;
+}
+
+.menu .row .menu-card p {
+  font-weight: 300;
+  max-width: 80%;
+}
+
+.menu .row .menu-card img {
+  border-radius: 5%;
+  border: 3px solid var(--utama);
+  max-width: 250px;
+}
+
+.menu .row .menu-card img:hover {
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.menu .row .menu-card .menu-card-title {
+  margin: 1.2rem auto 0.8rem;
+}
+
+.menu .row .menu-card p {
+  margin-bottom: 1.7rem;
+}
+.menu .row .menu-card .cta {
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  margin: auto;
+  color: var(--bg);
+  background-color: var(--utama);
+  border-radius: 0.5rem;
+}
+
+.menu .row .menu-card .cta:hover {
+  background-color: #333;
+  transition: 0.2s;
+  color: #fdd835;
+}
+
+/* Footer */
+footer {
+  background-color: var(--utama);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+footer p {
+  color: var(--bg);
+  font-weight: 700;
+}
+
+/* Judul Tim Kami */
+.team-header {
+  /* padding-top: 2rem; */
+  background-color: var(--bg);
+  margin-bottom: 0;
+}
+.team-header span {
+  color: #fff;
+}
+
+.team-header h1 {
+  font-size: 2.8rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  color: var(--utama);
+  margin-bottom: 0.5rem;
+  padding-top: 6rem;
+}
+
+.team-header h5 {
+  font-family: "raleway", sans-serif;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+/* Bagian Tim */
+.team-section {
+  background-color: var(--bg);
+  color: #eaeaea;
+  padding: 3rem 1rem;
+}
+
+.team-section .row {
+  justify-content: center;
+}
+
+.team-section .team-member {
+  margin-bottom: 2rem;
+}
+
+.team-img {
+  width: 150px;
+  height: 150px;
+  border: 3px solid var(--utama);
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.team-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--utama);
+  margin-bottom: 0.5rem;
+}
+
+.team-role {
+  font-size: 1.2rem;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  color: #eaeaea;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 70%;
+    transition: right 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .about .row,
+  .contact .row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+  .team-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .team-name {
+    font-size: 1.3rem;
+  }
+
+  .team-role {
+    font-size: 1rem;
+  }
+}
